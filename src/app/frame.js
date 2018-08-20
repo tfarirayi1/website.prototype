@@ -10,16 +10,16 @@ class Frame extends React.Component{
     constructor(){
         super();
         // load procedures
-        this._goUp=FrameBroker.goUp.bind(this);
-        this._signOut=LoginBroker.signOut.bind(this);
-        this._verifyUser=LoginBroker.verifyUser.bind(this);
-        this._configureAuthentication=LoginBroker.configure.bind(this);
+        this.up=FrameBroker.up.bind(this);
+        this.signOut=LoginBroker.signOut.bind(this);
+        this.verifyUser=LoginBroker.verifyUser.bind(this);
+        this.configureAuthentication=LoginBroker.configure.bind(this);
         // set state
         this.state={}
         this.state.userId='';
         // perform initial actions
+        this.configureAuthentication();
         document.title='website.prototype';
-        this._configureAuthentication();
     }
 
     componentDidMount(){
@@ -34,7 +34,7 @@ class Frame extends React.Component{
                 return(
                     <div className="frame---tool-panel">
                         <div className="frame---navigation-button">
-                            <ArrowUpwardIcon size="1em" tabIndex="0" onClick={this._goUp}/>
+                            <ArrowUpwardIcon size="1em" tabIndex="0" onClick={this.up}/>
                         </div>  
                     </div>
                 );

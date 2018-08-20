@@ -6,9 +6,9 @@ export default class ChangePasswordPage extends React.Component{
     constructor(props){
         super(props);
         // load procedures
-        this._handleInputChange=FormBroker.handleInputChange.bind(this);
-        this._setNewPassword=LoginBroker.setNewPassword.bind(this);
-        this._traverseForm=FormBroker.traverseForm.bind(this);
+        this.handleInputChange=FormBroker.handleInputChange.bind(this);
+        this.setNewPassword=LoginBroker.setNewPassword.bind(this);
+        this.traverseForm=FormBroker.traverseForm.bind(this);
         // set state
         const {location}=props;
         this.form=React.createRef();
@@ -40,31 +40,31 @@ export default class ChangePasswordPage extends React.Component{
                             email
                         </label>
                         <input id="emailInput" type="email" autoComplete="off" value={this.state.emailInput}
-                            onKeyDown={this._traverseForm} onChange={this._handleInputChange}/>
+                            onKeyDown={this.traverseForm} onChange={this.handleInputChange}/>
                     </div>
                     <div>
                         <label htmlFor="verificationCodeInput">
                             verification code
                         </label>
                         <input id="verificationCodeInput" type="number" value={this.state.verificationCodeInput}
-                            onKeyDown={this._traverseForm} onChange={this._handleInputChange}/>
+                            onKeyDown={this.traverseForm} onChange={this.handleInputChange}/>
                     </div>
                     <div>
                         <label htmlFor="passwordInput">
                             new password
                         </label>
                         <input id="passwordInput" type="password" value={this.state.passwordInput}
-                            onKeyDown={this._traverseForm} onChange={this._handleInputChange}/>
+                            onKeyDown={this.traverseForm} onChange={this.handleInputChange}/>
                     </div>
                     <div>
                         <label htmlFor="passwordConfirmationInput">
                             confirm new password
                         </label>
                         <input id="passwordConfirmationInput" type="password" value={this.state.passwordConfirmationInput}
-                            onKeyDown={this._traverseForm} onChange={this._handleInputChange}/>
+                            onKeyDown={this.traverseForm} onChange={this.handleInputChange}/>
                     </div>
                     <div>
-                        <div tabIndex="0" ref={this.formSubmitButton} onClick={this._setNewPassword}>
+                        <div tabIndex="0" ref={this.formSubmitButton} onClick={this.setNewPassword}>
                             submit
                         </div>
                     </div> 

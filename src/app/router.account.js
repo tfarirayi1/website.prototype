@@ -10,7 +10,7 @@ export default class AccountRouter extends React.Component{
     constructor(){
         super();
         // load procedures
-        this._renderRoutes=RouteBroker.renderRoutes.bind(this);
+        this.renderRoutes=RouteBroker.renderRoutes.bind(this);
         // set state
         this.state={};
         this.state.routes=[
@@ -34,7 +34,7 @@ export default class AccountRouter extends React.Component{
 
     render(){
         const RouteList=()=>{
-            return this._renderRoutes();
+            return this.renderRoutes();
         };
         return(
             <Switch>

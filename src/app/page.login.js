@@ -7,10 +7,10 @@ export default class LoginPage extends React.Component{
     constructor(){
         super();
         // load procedures
-        this._handleInputChange=FormBroker.handleInputChange.bind(this);
-        this._traverserForm=FormBroker.traverseForm.bind(this);
-        this._login=LoginBroker.signIn.bind(this);
-        this._changePassword=LoginBroker.changePassword.bind(this);
+        this.handleInputChange=FormBroker.handleInputChange.bind(this);
+        this.traverserForm=FormBroker.traverseForm.bind(this);
+        this.login=LoginBroker.signIn.bind(this);
+        this.changePassword=LoginBroker.changePassword.bind(this);
         // set state
         this.form=React.createRef();
         this.formSubmitButton=React.createRef();
@@ -29,22 +29,22 @@ export default class LoginPage extends React.Component{
                                 email
                             </label>
                             <input id="emailInput" type="email" autoComplete="off" value={this.state.emailInput}
-                                onChange={this._handleInputChange} onKeyDown={this._traverserForm}/>
+                                onChange={this.handleInputChange} onKeyDown={this.traverserForm}/>
                         </div>
                         <div>
                             <label htmlFor="passwordInput">
                                 password
                             </label>
                             <input id="passwordInput" type="password" value={this.state.passwordInput}
-                                onChange={this._handleInputChange} onKeyDown={this._traverserForm}/>
+                                onChange={this.handleInputChange} onKeyDown={this.traverserForm}/>
                         </div>
                         <div>
-                            <div ref={this.formSubmitButton} tabIndex="0" onClick={this._login}>
+                            <div ref={this.formSubmitButton} tabIndex="0" onClick={this.login}>
                                     submit
                             </div>
                         </div>
                         <div>
-                            <div tabIndex="0" onClick={this._changePassword}>
+                            <div tabIndex="0" onClick={this.changePassword}>
                                     change password
                             </div>
                         </div>

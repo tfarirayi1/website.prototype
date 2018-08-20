@@ -7,9 +7,9 @@ export default class RegisterPage extends React.Component{
     constructor(){
         super();
         // load procedures
-        this._handleInputChange=FormBroker.handleInputChange.bind(this);
-        this._traverseForm=FormBroker.traverseForm.bind(this);
-        this._register=LoginBroker.register.bind(this);
+        this.handleInputChange=FormBroker.handleInputChange.bind(this);
+        this.traverseForm=FormBroker.traverseForm.bind(this);
+        this.register=LoginBroker.register.bind(this);
         // set state
         this.form=React.createRef();
         this.formSubmitButton=React.createRef();
@@ -30,31 +30,31 @@ export default class RegisterPage extends React.Component{
                                 email
                             </label>
                             <input id="emailInput" type="email" autoComplete="off" value={this.state.emailInput}
-                                onChange={this._handleInputChange} onKeyDown={this._traverseForm}/>
+                                onChange={this.handleInputChange} onKeyDown={this.traverseForm}/>
                         </div>
                         <div>
                             <label htmlFor="businessNameInput">
                                 business name
                             </label>
                             <input id="businessNameInput" type="text" autoComplete="off" value={this.state.businessNameInput}
-                                onChange={this._handleInputChange} onKeyDown={this._traverseForm}/>
+                                onChange={this.handleInputChange} onKeyDown={this.traverseForm}/>
                         </div>
                         <div>
                             <label htmlFor="passwordInput">
                                 password
                             </label>
                             <input id="passwordInput" type="password" value={this.state.passwordInput}
-                                onChange={this._handleInputChange} onKeyDown={this._traverseForm}/>
+                                onChange={this.handleInputChange} onKeyDown={this.traverseForm}/>
                         </div>
                         <div>
                             <label htmlFor="passwordConfirmationInput">
                                 confirm password
                             </label>
                             <input id="passwordConfirmationInput" type="password" value={this.state.passwordConfirmationInput}
-                                onChange={this._handleInputChange} onKeyDown={this._traverseForm}/>
+                                onChange={this.handleInputChange} onKeyDown={this.traverseForm}/>
                         </div>
                         <div>
-                            <div ref={this.formSubmitButton} tabIndex="0" onClick={this._register}>
+                            <div ref={this.formSubmitButton} tabIndex="0" onClick={this.register}>
                                     submit
                             </div>
                         </div>
