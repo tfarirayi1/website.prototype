@@ -23,7 +23,7 @@ class Frame extends React.Component{
     }
 
     componentDidMount(){
-        // this._verifyUser();
+        // this.verifyUser();
     }
 
     render(){

@@ -18,6 +18,8 @@
 {
     padding:0.3rem;
     max-width:13rem;
+    overflow-x:hidden;
+    word-wrap:break-word;
 }
 
 .frame---tool-panel
