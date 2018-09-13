@@ -5,7 +5,7 @@ export default class AccountFilePage extends React.Component{
         return(
             <div className="account--file">
                 <div>
-                    your File
+                    your details
                 </div>
             </div>
         );

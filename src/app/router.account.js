@@ -1,10 +1,11 @@
-import React            from 'react';
-import HomePage         from 'page.account';
-import BillingPage      from 'page.account--billing';
-import ProjectsPage     from 'page.account--projects';
-import BlankPage        from 'page.blank';
-import RouteBroker      from 'broker.route';
-import {Switch,Route}   from 'react-router-dom';
+import React                from 'react';
+import AccountHomePage      from 'page.account--home';
+import AccountBillingPage   from 'page.account--billing';
+import AccountProjectsPage  from 'page.account--projects';
+import AccountDetailsPage   from 'page.account--details';
+import BlankPage            from 'page.blank';
+import RouteBroker          from 'broker.route';
+import {Switch,Route}       from 'react-router-dom';
 
 export default class AccountRouter extends React.Component{
     constructor(){
@@ -15,30 +16,34 @@ export default class AccountRouter extends React.Component{
         this.state={};
         this.state.routes=[
             {
-                component:HomePage,
+                component:AccountHomePage,
                 endpoint:'/account',
                 exact:true,
             },
             {
                 endpoint:'/account/billing',
-                component:BillingPage,
+                component:AccountBillingPage,
                 exact:true,
             },
             {
                 endpoint:'/account/projects',
-                component:ProjectsPage,
+                component:AccountProjectsPage,
+                exact:true,
+            },
+            {
+                endpoint:'/account/details',
+                component:AccountDetailsPage,
                 exact:true,
             },
         ];
     }
 
     render(){
-        const RouteList=()=>{
-            return this.renderRoutes();
-        };
         return(
             <Switch>
-                <RouteList/>
+                {
+                    this.renderRoutes()
+                }
                 <Route component={BlankPage}/>
             </Switch>
         );

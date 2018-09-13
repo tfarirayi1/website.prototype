@@ -15,6 +15,10 @@ export default class AccountHomePage extends React.Component{
                 endpoint:'/account/projects',
                 title:'projects',
             },
+            {
+                endpoint:'/account/details',
+                title:'details',
+            },
         ];
     }
 
@@ -35,9 +39,6 @@ export default class AccountHomePage extends React.Component{
                 <div>
                     <div>
                         your account
-                    </div>
-                    <div>
-                        {this.props.userId}
                     </div>
                 </div>
                 <Menu/>

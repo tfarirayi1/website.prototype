@@ -1,5 +1,6 @@
-import React    from 'react';
-import {Route}  from 'react-router-dom';
+import React        from 'react';
+import BlankPage    from 'page.blank';
+import {Route}      from 'react-router-dom';
 
 export default class RouteBroker{
     static renderRoutes(){
@@ -8,8 +9,9 @@ export default class RouteBroker{
             const position=p2;
             const component=(p1)=>{
                 const routeObject=p1;
-                const props={};
-                props.userId=this.props.userId;
+                const props={
+                    userId:this.props.userId,
+                };
                 return React.createElement(item.component,Object.assign(props,routeObject));
             };
             return(

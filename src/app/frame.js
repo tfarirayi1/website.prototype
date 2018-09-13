@@ -17,7 +17,7 @@ class Frame extends React.Component{
         // set state
         this.state={}
         this.state.userId='';
-        // perform initial actions
+        // perform initial procedures
         this.configureAuthentication();
         document.title='website.prototype';
     }

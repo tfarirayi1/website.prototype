@@ -4,6 +4,7 @@ import GlossaryPage     from 'page.glossary';
 import RegisterPage     from 'page.register';
 import BlankPage        from 'page.blank';
 import LoginRouter      from 'router.login';
+import AccountRouter    from 'router.account';
 import RouteBroker      from 'broker.route';
 import {Switch,Route}   from 'react-router-dom';
 
@@ -26,6 +27,11 @@ export default class MainRouter extends React.Component{
                 exact:false,
             },
             {
+                endpoint:'/account',
+                component:AccountRouter,
+                exact:false,
+            },
+            {
                 endpoint:'/register',
                 component:RegisterPage,
                 exact:true,
@@ -39,12 +45,11 @@ export default class MainRouter extends React.Component{
     }
 
     render(){
-        const RouteList=()=>{
-            return this.renderRoutes();
-        };
         return(
             <Switch>
-                <RouteList/>
+                {
+                    this.renderRoutes()
+                }
                 <Route component={BlankPage}/>
             </Switch>
         );

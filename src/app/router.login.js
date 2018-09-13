@@ -33,12 +33,11 @@ export default class HelpRouter extends React.Component{
     }
 
     render(){
-        const RouteList=()=>{
-            return this.renderRoutes();
-        };
         return(
             <Switch>
-                <RouteList/>
+                {
+                    this.renderRoutes()
+                }
                 <Route component={BlankPage}/>
             </Switch>
         );

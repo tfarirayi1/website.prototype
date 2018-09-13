@@ -5,19 +5,22 @@ import          'styles/index.css';
 export default class IndexPage extends React.Component{
     render(){
         const Neutral=()=>(
-            <div className="index---neutral">
-                <div>
+            <div className="index---neutral-menu">
+                <div className="index---menu-option">
                     <Link to="/glossary">glossary</Link>
                 </div>
             </div>
         );
 
         const Content=()=>{
-            if(this.props.userId){
+            const currentUser=this.props.userId;
+            if(currentUser){
                 return(
                     <React.Fragment>
-                        <div>
-                            <Link to="/account">account</Link>
+                        <div className="index---authenticated-menu">
+                            <div className="index---menu-option">
+                                <Link to="/account">account</Link>
+                            </div>
                         </div>
                         <Neutral/>
                     </React.Fragment>
@@ -26,11 +29,13 @@ export default class IndexPage extends React.Component{
             }else{
                 return(
                     <React.Fragment>
-                        <div>
-                            <Link to="/login">login</Link>
-                        </div>
-                        <div>
-                            <Link to="/register">register</Link>
+                        <div className="index---unauthenticated-menu">
+                            <div className="index---menu-option">
+                                <Link to="/login">login</Link>
+                            </div>
+                            <div className="index---menu-option">
+                                <Link to="/register">register</Link>
+                            </div>
                         </div>
                         <Neutral/>
                     </React.Fragment>

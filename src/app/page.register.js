@@ -22,7 +22,8 @@ export default class RegisterPage extends React.Component{
 
     render(){
         const Content=()=>{
-            if(this.props.userId===''){
+            const currentUser=this.props.userId;
+            if(currentUser===''){
                 return(
                     <div ref={this.form}>
                         <div>

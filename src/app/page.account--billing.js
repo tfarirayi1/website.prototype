@@ -5,7 +5,7 @@ export default class AccountBillingPage extends React.Component{
         return(
             <div className="account--billing">
                 <div>
-                    your bill
+                    your billing
                 </div>
             </div>
         );
